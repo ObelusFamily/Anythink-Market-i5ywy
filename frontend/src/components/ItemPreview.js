@@ -30,7 +30,11 @@ const ItemPreview = (props) => {
   };
 
   const getImage = () => {
-    if (item.image === undefined || item.image === "" || item.image === "/placeholder.png") {
+    if (
+      item.image === undefined ||
+      item.image === "" ||
+      item.image === "/placeholder.png"
+    ) {
       return "/placeholder.png";
     } else {
       try {
