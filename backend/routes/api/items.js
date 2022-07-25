@@ -145,6 +145,15 @@ router.post("/", auth.required, function(req, res, next) {
       }
 
       var item = new Item(req.body.item);
+        if (item.image === undefined || item.image === "") {
+            item.image = "/placeholder.png";
+        } else {
+            try {
+                const url = new URL(item.image);
+            } catch (e) {
+                item.image = "/placeholder.png";
+            }
+        }
 
       item.seller = user;
 
