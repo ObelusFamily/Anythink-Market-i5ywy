@@ -29,6 +29,19 @@ const ItemPreview = (props) => {
     }
   };
 
+  const getImage = () => {
+    if (item.image === undefined || item.image === "" || item.image === "/placeholder.png") {
+      return "/placeholder.png";
+    } else {
+      try {
+        new URL(item.image);
+        return item.image;
+      } catch (e) {
+        return "/placeholder.png";
+      }
+    }
+  };
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -36,7 +49,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={getImage()}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
