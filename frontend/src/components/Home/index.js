@@ -20,8 +20,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onEnterSearchTerm: (term, pager, payload) =>
-    dispatch({ type: ENTER_SEARCH_TERM, term, pager, payload }),
+  onEnterSearchTerm: (searchTerm, pager, payload) =>
+    dispatch({ type: ENTER_SEARCH_TERM, searchTerm, pager, payload }),
   onClickTag: (tag, pager, payload) =>
     dispatch({ type: APPLY_TAG_FILTER, tag, pager, payload }),
   onLoad: (tab, pager, payload) =>
