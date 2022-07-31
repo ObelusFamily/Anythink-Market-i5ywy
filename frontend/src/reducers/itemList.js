@@ -56,6 +56,7 @@ const reducer = (state = {}, action) => {
         tab: "all",
         tag: null,
         currentPage: 0,
+        searchTerm: action.searchTerm,
       };
     case HOME_PAGE_LOADED:
       return {
